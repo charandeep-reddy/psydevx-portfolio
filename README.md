@@ -2,6 +2,8 @@
 
 A modern, config-driven portfolio built with Next.js 16, Tailwind CSS, and shadcn/ui.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Quick Start
 
 ```bash
