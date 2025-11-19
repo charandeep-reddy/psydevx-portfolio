@@ -26,6 +26,17 @@ Run the development server:
 pnpm dev
 ```
 
+## Before You Start
+
+**Important:** Before working on any feature or bug fix, please:
+
+1. **Check existing issues** - Look through open issues to see if someone is already working on it
+2. **Claim the issue** - If an issue exists, leave a comment saying you're working on it
+3. **Create an issue** - If no issue exists, create one first to discuss the change
+4. **Wait for approval** - For major changes, wait for maintainer feedback before starting
+
+This prevents duplicate work and ensures everyone's time is used efficiently.
+
 ## Making Changes
 
 ### Project Structure
@@ -68,7 +79,7 @@ pnpm dev
 3. Open a Pull Request on GitHub with:
    - A clear title and description
    - Screenshots (if UI changes)
-   - Reference any related issues
+   - Reference the related issue (e.g., "Closes #123" or "Fixes #456")
 
 ## What to Contribute
 
