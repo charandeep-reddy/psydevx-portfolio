@@ -1,4 +1,4 @@
-# Portfolio Website Template
+# Psyfolio
 
 A modern, config-driven portfolio built with Next.js 16, Tailwind CSS, and shadcn/ui.
 
