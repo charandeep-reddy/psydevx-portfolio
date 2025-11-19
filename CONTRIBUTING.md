@@ -7,7 +7,7 @@ Thank you for your interest in contributing to Psyfolio! This document provides 
 1. Fork the repository
 2. Clone your fork:
    ```bash
-   git clone https://github.com/charandeep-reddy/psyfolio.git
+   git clone https://github.com/<your-username>/psyfolio.git
    cd psyfolio
    ```
 3. Install dependencies:
