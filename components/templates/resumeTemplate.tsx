@@ -10,6 +10,8 @@ interface ResumeConfig {
       description?: string;
       degree?: string;
       institution?: string;
+      skills?: string[];
+      cgpa?: string;
     }>;
   }>;
 }
@@ -44,6 +46,12 @@ export const ResumeTemplate = ({ config }: ResumeTemplateProps) => {
               )}
               {item.description && (
                 <p className="text-white/80 leading-[1.4]">{item.description}</p>
+              )}
+              {item.skills && (
+                <p className="text-white/80 leading-[1.4]">{item.skills.join(", ")}</p>
+              )}
+              {item.cgpa && (
+                <p className="text-white/80 leading-[1.4]">{item.cgpa}</p>
               )}
             </div>
           ))}
