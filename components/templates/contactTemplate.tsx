@@ -1,10 +1,18 @@
 "use client";
 import { InfoCard } from "../infoCard";
 import { useForm } from "react-hook-form";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 interface ContactConfig {
   title: string;
@@ -37,8 +45,7 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
-    // Handle form submission here
+    toast.success("Message sent successfully"); 
   };
 
   return (
@@ -48,7 +55,10 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
           return (
             <div key={sectionIndex} className="flex flex-col gap-5">
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full"
+                >
                   {section.fields?.map((field, fieldIndex) => (
                     <FormField
                       key={fieldIndex}
@@ -58,13 +68,21 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
                         required: `${field.label} is required`,
                       }}
                       render={({ field: formField }) => (
-                        <FormItem>
-                          <FormLabel className="text-white">{field.label}</FormLabel>
+                        <FormItem
+                          className={`${
+                            field.type === "textarea"
+                              ? "lg:col-span-2 col-span-1"
+                              : ""
+                          } flex flex-col gap-4`}
+                        >
+                          <FormLabel className="text-white font-semibold text-sm">
+                            {field.label}
+                          </FormLabel>
                           <FormControl>
                             {field.type === "textarea" ? (
                               <Textarea
                                 placeholder={field.placeholder}
-                                className="text-white"
+                                className="text-white w-full px-4 py-3 min-h-[100px] border-gray-700"
                                 rows={5}
                                 {...formField}
                               />
@@ -72,7 +90,7 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
                               <Input
                                 type={field.type}
                                 placeholder={field.placeholder}
-                                className="text-white"
+                                className="text-white px-4 py-6 border-gray-700"
                                 {...formField}
                               />
                             )}
@@ -82,7 +100,11 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
                       )}
                     />
                   ))}
-                  <Button type="submit" variant="default" className="mt-2">
+                  <Button
+                    type="submit"
+                    variant="default"
+                    className="mt-2 max-w-fit text-white bg-blue-500 hover:bg-blue-600"
+                  >
                     Send Message
                   </Button>
                 </form>
@@ -95,7 +117,11 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
           return (
             <div key={sectionIndex} className="flex flex-col gap-4">
               {section.items?.map((item, itemIndex) => (
-                <InfoCard key={itemIndex} title={item.title} value={item.value} />
+                <InfoCard
+                  key={itemIndex}
+                  title={item.title}
+                  value={item.value}
+                />
               ))}
             </div>
           );
@@ -106,4 +132,3 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
     </>
   );
 };
-
