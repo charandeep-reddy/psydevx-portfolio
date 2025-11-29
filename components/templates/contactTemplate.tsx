@@ -13,6 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useState } from "react";
+import { Loader2Icon } from "lucide-react";
 
 interface ContactConfig {
   title: string;
@@ -40,12 +42,27 @@ interface FormValues {
 }
 
 export const ContactTemplate = ({ config }: ContactTemplateProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<FormValues>({
-    defaultValues: {},
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    }
   });
 
-  const onSubmit = (data: FormValues) => {
-    toast.success("Message sent successfully"); 
+  const onSubmit = async (data: FormValues) => {
+    try {
+      setIsLoading(true);
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(data);
+      toast.success("Message sent successfully");
+      form.reset();
+    } catch (error) {
+      toast.error("Failed to send message");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -103,9 +120,10 @@ export const ContactTemplate = ({ config }: ContactTemplateProps) => {
                   <Button
                     type="submit"
                     variant="default"
-                    className="mt-2 max-w-fit text-white bg-blue-500 hover:bg-blue-600"
+                    className="mt-2 w-40 text-white bg-blue-500 hover:bg-blue-600"
+                    disabled={isLoading}
                   >
-                    Send Message
+                    {isLoading ? <Loader2Icon className="size-4 animate-spin" /> : "Send Message"}
                   </Button>
                 </form>
               </Form>
