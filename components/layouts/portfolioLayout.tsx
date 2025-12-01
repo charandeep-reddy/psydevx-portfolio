@@ -27,7 +27,7 @@ export function PortfolioLayout({ children, title }: PortfolioLayoutProps) {
           {title && (
             <div className="relative pb-7">
               <h1 className="text-4xl font-bold text-white">{title}</h1>
-              <div className="absolute bottom-0 left-0 h-1.5 w-10 rounded-full bg-white"></div>
+              <div className="absolute bottom-0 left-0 h-1.5 w-10 rounded-full bg-blue-400"></div>
             </div>
           )}
           {children}
