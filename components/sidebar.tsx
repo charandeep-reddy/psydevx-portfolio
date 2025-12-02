@@ -4,7 +4,7 @@ import {
 } from "@/components/ui/card";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faXTwitter, faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { Button } from "./ui/button";
 
@@ -19,31 +19,31 @@ interface SidebarProps {
 }
 
 const sidebarConfig = {
-  name: "Example Name",
-  title: "Example Title",
+  name: "Charandeep Reddy",
+  title: "Software Developer",
   info: infoConfig
 }
 
 const socialConfig = [
   {
-    title: "Facebook",
-    icon: faFacebook,
-    href: "https://www.facebook.com/example"
+    title: "GitHub",
+    icon: faGithub,
+    href: "https://github.com/charandeep-reddy"
   },
   {
     title: "Twitter",
-    icon: faTwitter,
-    href: "https://www.twitter.com/example"
+    icon: faXTwitter,
+    href: "https://x.com/PsyDevX"
   },
   {
     title: "Instagram",
     icon: faInstagram,
-    href: "https://www.instagram.com/example"
+    href: "https://www.instagram.com/psydev._.x"
   },
   {
     title: "LinkedIn",
     icon: faLinkedin,
-    href: "https://www.linkedin.com/in/example"
+    href: "https://www.linkedin.com/in/charandeep-reddy"
   },
 ]
 
@@ -55,7 +55,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
         <CardTitle className="text-2xl font-bold">{sidebarConfig.name}</CardTitle>
 
-        <Button className="bg-gray-800 hover:bg-red-500">{sidebarConfig.title}</Button>
+        <Button className="bg-gray-800 hover:bg-gray-800">{sidebarConfig.title}</Button>
       </div>
 
       <div className="h-px w-full bg-gray-500"></div>
@@ -68,7 +68,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
       <div className="flex gap-4 items-center justify-center">
         {socialConfig.map((social: { title: string; href: string; icon: IconProp }) => (
-          <Link href={social.href} key={social.title} className="flex items-center gap-2">
+          <Link href={social.href} key={social.title} target="_blank" className="flex items-center gap-2">
             <FontAwesomeIcon icon={social.icon} className="w-4" />
           </Link>
         ))}
