@@ -23,7 +23,7 @@ export const portfolioConfig = {
           description: "A payment processing platform for a client. Built with a lightweight, performance-first approach.",
           technologies: ["Next.js", "TypeScript", "Tailwind"],
           image: "/Portfolio/payatom.png",
-          url: "https://payatom.com"
+          url: "https://payatom.vercel.app"
         },
         {
           title: "Devfolio",
@@ -46,7 +46,7 @@ export const portfolioConfig = {
           description: "Landng Page",
           technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
           image:"/Portfolio/codedale.png",
-          url:"https://codedale.com"
+          url:"https://codedale.tech"
         },
         {
           title: "Questionnaire",
@@ -62,7 +62,7 @@ export const portfolioConfig = {
           "A real-time IoT monitoring dashboard shipped for an international client. Handles live device data and visualizations.",
           technologies: ["Next.js", "TypeScript", "WebSockets", "Supabase"],
           image: "/Portfolio/feers.png",
-          url: "https://feers.com"
+          url: "https://feers-app.vercel.app/"
         },
         {
           title: "SpeedTest by Ookla – Raycast Extension",
