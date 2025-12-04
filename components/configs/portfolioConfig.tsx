@@ -16,7 +16,7 @@ export const portfolioConfig = {
           description: "A clean, fast landing page for a restaurant where users can browse the menu and place orders directly via WhatsApp. Built with a lightweight, performance-first approach.",
           technologies: ["Next.js", "TypeScript", "Tailwind"],
           image: "/Portfolio/foodlogin.png",
-          url: "https://foodlogin.com"
+          url: "https://food-login.vercel.app"
         },
         {
           title: "PayAtom",
