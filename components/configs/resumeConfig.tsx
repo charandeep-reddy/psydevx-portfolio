@@ -6,27 +6,21 @@ export const resumeConfig = {
       title: "Experience",
       items: [
         {
-          role: "Senior Developer",
-          company: "Tech Company",
-          period: "2022 - Present",
-          description: "Led development of multiple mobile applications"
+          role: "Freelance Software Developer",
+          period: "January 2025 - Present",
+          description: "Developing mobile and web applications"
         },
         {
-          role: "Junior Developer",
-          company: "Startup Inc",
-          period: "2020 - 2022",
-          description: "Developed web and mobile applications"
-        }
-      ]
-    },
-    {
-      type: "education",
-      title: "Education",
-      items: [
+          role: "Software Developer",
+          company: "CodeDale",
+          period: "October 2025 - December 2025",
+          description: "Developing mobile and web applications"
+        },
         {
-          degree: "Bachelor's in Computer Science",
-          institution: "University Name",
-          period: "2018 - 2022"
+          role: "Software Developer Intern",
+          company: "CodeDale",
+          period: "July 2025 - September 2025",
+          description: "Developing mobile and web applications"
         }
       ]
     }

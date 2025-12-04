@@ -1,7 +1,7 @@
 export const infoConfig = [
     {
         title: "Email",
-        value: "example@gmail.com"
+        value: "charan.tech36@gmail.com"
     },
     {
         title: "Phone",
@@ -9,10 +9,10 @@ export const infoConfig = [
     },
     {
         title: "Birthday",
-        value: "January 1, 2000"
+        value: "March 3, 2006"
     },
     {
         title: "Location",
-        value: "Example, Country"
+        value: "Hyderabad, India"
     }
 ]

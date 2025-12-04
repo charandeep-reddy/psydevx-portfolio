@@ -1,4 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+"use client";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 interface PortfolioConfig {
   title: string;
@@ -8,7 +12,8 @@ interface PortfolioConfig {
       title: string;
       description: string;
       technologies: string[];
-      image?: string;
+      image?: string | StaticImageData;
+      url?: string;
     }>;
   }>;
 }
@@ -18,23 +23,32 @@ interface PortfolioTemplateProps {
 }
 
 export const PortfolioTemplate = ({ config }: PortfolioTemplateProps) => {
+  const router = useRouter();
   return (
     <>
       {config.sections.map((section, sectionIndex) => (
-        <div key={sectionIndex} className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div
+          key={sectionIndex}
+          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
           {section.items.map((item, itemIndex) => (
-            <Card key={itemIndex} className="flex flex-col gap-3 pt-0">
+            <Card onClick={() => router.push(`${item.url}`)} key={itemIndex} className="flex flex-col gap-3 pt-0 cursor-pointer">
               {item.image && (
-                <div className="w-full h-50 bg-gray-700 rounded-lg mb-2"></div>
+                <Image src={item.image} alt={item.title} unoptimized width={100} height={100} className="w-full h-60 object-cover object-top rounded-lg mb-2" />
               )}
-              <CardHeader>
-                <CardTitle className="text-xl text-white">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-3">
-                <p className="text-white/80 leading-[1.4]">{item.description}</p>
+              <CardContent className="flex flex-col gap-5">
+                <CardTitle className="text-xl text-white">
+                  {item.title}
+                </CardTitle>
+                <p className="text-white/80 leading-[1.4]">
+                  {item.description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {item.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full text-sm">
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full text-sm"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -47,4 +61,3 @@ export const PortfolioTemplate = ({ config }: PortfolioTemplateProps) => {
     </>
   );
 };
-

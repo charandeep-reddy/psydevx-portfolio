@@ -16,7 +16,7 @@ export function PortfolioLayout({ children, title }: PortfolioLayoutProps) {
     <div className="lg:my-15 mt-5 mb-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-7 w-full min-h-screen relative px-5 lg:px-0">
       <Sidebar className="lg:col-span-1 lg:sticky lg:top-15" />
 
-      <Card className="lg:col-span-3 min-h-screen p-7.5 relative w-full rounded-[20px]">
+      <Card className="lg:col-span-3 max-h-fit p-7.5 relative w-full rounded-[20px]">
         <Navbar />
         <motion.div
           initial={{ opacity: 0 }}

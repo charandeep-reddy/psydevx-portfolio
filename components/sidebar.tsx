@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { infoConfig } from "./infoConfig";
 import Link from "next/link";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import Image from "next/image";
 
 interface SidebarProps {
     className?: string;
@@ -21,7 +22,8 @@ interface SidebarProps {
 const sidebarConfig = {
   name: "Charandeep Reddy",
   title: "Software Developer",
-  info: infoConfig
+  info: infoConfig,
+  image: "/Social/psydevx.jpg"
 }
 
 const socialConfig = [
@@ -51,7 +53,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <Card className={cn("flex flex-col gap-8 px-7.5 pb-7.5 pt-15 rounded-[20px] text-white h-fit", className)}>
       <div className="flex flex-col gap-5 items-center justify-between">
-        <div className="w-[150px] aspect-square rounded-3xl bg-white shadow-md"></div>
+        <Image src={sidebarConfig.image} alt={sidebarConfig.name} width={150} height={150} className="w-[150px] aspect-square rounded-3xl bg-white shadow-md" />
 
         <CardTitle className="text-2xl font-bold">{sidebarConfig.name}</CardTitle>
 
