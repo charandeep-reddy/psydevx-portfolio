@@ -20,32 +20,32 @@ interface SidebarProps {
 }
 
 const sidebarConfig = {
-  name: "Charandeep Reddy",
+  name: "Name",
   title: "Software Developer",
   info: infoConfig,
-  image: "/Social/psydevx.jpg"
+  image: "/Social/image.jpg"
 }
 
 const socialConfig = [
   {
     title: "GitHub",
     icon: faGithub,
-    href: "https://github.com/charandeep-reddy"
+    href: "https://github.com"
   },
   {
     title: "Twitter",
     icon: faXTwitter,
-    href: "https://x.com/PsyDevX"
+    href: "https://x.com"
   },
   {
     title: "Instagram",
     icon: faInstagram,
-    href: "https://www.instagram.com/psydev._.x"
+    href: "https://www.instagram.com"
   },
   {
     title: "LinkedIn",
     icon: faLinkedin,
-    href: "https://www.linkedin.com/in/charandeep-reddy"
+    href: "https://www.linkedin.com/in"
   },
 ]
 
