@@ -21,6 +21,14 @@ interface BlogTemplateProps {
 
 export const BlogTemplate = ({ config }: BlogTemplateProps) => {
   const router = useRouter();
+  console.log(config);
+  if (config.sections.length === 0) {
+    return (
+      <>
+        <p className="text-white/80 leading-[1.4] text-center text-2xl font-bold">Coming soon...</p>
+      </>
+    );
+  }
   return (
     <>
       {config.sections.map((section, sectionIndex) => (
