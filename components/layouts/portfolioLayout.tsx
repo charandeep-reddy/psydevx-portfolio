@@ -3,7 +3,6 @@ import { Sidebar } from "@/components/sidebar";
 import { Card } from "@/components/ui/card";
 import { Navbar } from "@/components/navbar";
 import { motion } from "motion/react";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface PortfolioLayoutProps {
   children: React.ReactNode;
@@ -11,12 +10,11 @@ interface PortfolioLayoutProps {
 }
 
 export function PortfolioLayout({ children, title }: PortfolioLayoutProps) {
-  const isMobile = useIsMobile();
   return (
-    <div className="lg:my-15 mt-5 mb-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-7 w-full min-h-screen relative px-5 lg:px-0">
-      <Sidebar className="lg:col-span-1 lg:sticky lg:top-15" />
+    <div className="lg:py-20 pb-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-7 w-full min-h-screen relative px-5 lg:px-0">
+      <Sidebar className="lg:col-span-1 lg:sticky lg:top-20" />
 
-      <Card className="lg:col-span-3 max-h-fit p-7.5 relative w-full rounded-[20px]">
+      <Card className="lg:col-span-3 min-h-[calc(100vh-100px)] p-7.5 relative w-full rounded-[20px]">
         <Navbar />
         <motion.div
           initial={{ opacity: 0 }}
