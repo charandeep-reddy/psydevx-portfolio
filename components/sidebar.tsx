@@ -14,6 +14,7 @@ import { infoConfig } from "./infoConfig";
 import Link from "next/link";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Image from "next/image";
+import { LucideIcon } from "lucide-react";
 
 interface SidebarProps {
     className?: string;
@@ -63,8 +64,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <div className="h-px w-full bg-gray-500"></div>
 
       <div className="flex flex-col gap-4 text-white px-2">
-        {sidebarConfig.info.map((info: { title: string; value: string }) => (
-          <InfoCard key={info.title} title={info.title} value={info.value} />
+        {sidebarConfig.info.map((info: { title: string; value: string; icon: LucideIcon }) => (
+          <InfoCard key={info.title} title={info.title} value={info.value} icon={info.icon} />
         ))}
       </div>
 
