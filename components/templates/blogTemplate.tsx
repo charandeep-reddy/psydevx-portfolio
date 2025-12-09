@@ -25,7 +25,7 @@ export const BlogTemplate = ({ config }: BlogTemplateProps) => {
   if (config.sections.length === 0) {
     return (
       <>
-        <p className="text-white/80 leading-[1.4] text-center text-2xl font-bold">Coming soon...</p>
+        <p className="text-white/80 leading-[1.4] text-center text-2xl font-bold">No Blogs Yet</p>
       </>
     );
   }
