@@ -11,7 +11,7 @@ interface PortfolioLayoutProps {
 
 export function PortfolioLayout({ children, title }: PortfolioLayoutProps) {
   return (
-    <div className="lg:py-20 pb-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-7 w-full min-h-screen relative px-5 lg:px-0">
+    <div className="py-5 lg:py-20 pb-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-7 w-full min-h-screen relative px-5 lg:px-0">
       <Sidebar className="lg:col-span-1 lg:sticky lg:top-20" />
 
       <Card className="lg:col-span-3 min-h-[calc(100vh-100px)] p-7.5 relative w-full rounded-[20px]">
