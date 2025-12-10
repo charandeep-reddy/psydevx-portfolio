@@ -21,7 +21,6 @@ interface BlogTemplateProps {
 
 export const BlogTemplate = ({ config }: BlogTemplateProps) => {
   const router = useRouter();
-  console.log(config);
   if (config.sections.length === 0) {
     return (
       <>
